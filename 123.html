@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+<meta charset="UTF-8">
+<style type="text/css">
 
 #img {
 	border: 0;
 	text-align: center;
 }
+/* this is icons*/
+#icons{
+    cursor: pointer;
+    transition: all 0.6s;
+	border: 0;
+	width: 100px;
+	height: 100px;
+}
 
+#icons:hover{
+	transform: scale(1.2);
+}
 
 #main {
 
@@ -28,8 +40,8 @@
 }
 
 header {
-  background-color: #496e9c ;
-  padding: 30px;
+  
+  padding: 10px;
   text-align: center;
   font-size: 40px;
   color: white;
@@ -37,41 +49,43 @@ header {
 
 body {
   background-color: #496e9c ;
+  
   background-size: cover;
- 
 }
 
 
 img {
-border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  
+	border: 0;
+	padding: 5px;
+ 
 }
 </style>
-<title>Page Title</title>
+	<title>HomePage</title>
 </head>
 <body>
 <header>  
-<div>
-	<img src="i.png" id= "img" alt="top" width="120" height="120" >
-</div>  
-	<h2></h2>
+	<div>
+		<img src="i.png" id= "img" alt="top"  width="120" height="120">
+	</div>  
+		<h2></h2>
 
 </header>
 
 <section>
 
-<div id="main">
-<div class="column" align="center"  style="border: #496e9c">
+	<div id="main">
+		<div class="column" align="center" >
 
-<img src="Unknown.jpg" alt="img2" id="img" width="420" height="259.5" ></div>
+			<img src="Unknown.jpg" alt="img2" id="img" width="420" height="259.5" border="1" >
+		</div>
 
-<div class="column" style="background-color: #496e9c;">
-	<h1 align="center">introduction</h1>
-	<p style="text-align: center;"><a href="link">go start</a></p>
-</div>
-</div>
+		<div class="column">
+
+			<h1 align="center">introduction</h1>
+
+			<p style="text-align: center;"><a href="https://www.google.com/" ><img src="start.png" id="icons"></a></p>
+		</div>
+	</div>
 </section>
 
 

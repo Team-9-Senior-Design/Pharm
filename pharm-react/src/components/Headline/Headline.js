@@ -4,7 +4,12 @@ import './Headline.css';
 
 const Headline = () => (
   <div className="Headline">
-    Headline Component
+    <header>
+        <div>
+            <img className="topimg" src={require('../../logo.png')} alt="top" />
+        </div>
+        <div className="top2"></div>
+    </header>
   </div>
 );
 

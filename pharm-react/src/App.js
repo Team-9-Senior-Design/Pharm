@@ -8,38 +8,50 @@ import {
 } from "react-router-dom";
 import { AwesomeButton } from "react-awesome-button";
 import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
+import Game from "./components/Game/Game";
+import Headline from './components/Headline/Headline';
 
-function App() {
-  // startGame() {
-    
-  // }
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {homePage: true};
 
+  }
+  startGame= () => {
+    this.setState({homePage: false}); 
+  }
+  render () {
+    const homePage = this.state.homePage;
   return (
     <div className="App">
-      <header>
+      <Headline/>
+      {homePage ? (
         <div>
-            <img className="topimg" src={require('./logo.png')} alt="top" />
-        </div>
-        <div className="top2"></div>
-      </header>
-      <div>
           <img className="background" src={require('./pre.jpg')} alt="background" />
           <Router className="start">
-            <Link to="/Headline">
+            <Link to="/Play">
             <AwesomeButton
               cssModule={AwesomeButtonStyles}
               type="primary"
               ripple
             >
-              Button
+              Start Game 
             </AwesomeButton>
             </Link>
+            <Switch>
+              <Route path="/Play">
+                {this.startGame}
+              </Route>
+            </Switch>
           </Router>
-
       </div>
+      ) : (
+        <Game />
+      )}
       
     </div>
   );
+  }
 }
 
 

@@ -1,15 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Game.css';
+import Headline from '../Headline/Headline';
 
-const Game = () => (
-  <div className="Game">
-    Game Component
-  </div>
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {homePage: true};
+
+  }
+  render () {
+  return (
+    <div>
+      <div className="Game">
+        Welcome to the Pharmacy Simulator!
+      </div>
+    </div>
 );
-
-Game.propTypes = {};
-
-Game.defaultProps = {};
+}
+}
 
 export default Game;

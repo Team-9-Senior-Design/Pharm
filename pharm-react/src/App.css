@@ -77,7 +77,8 @@ section {
   height: 647px;
   left: 119px;
   top: 133px;
-  opacity: 70%;
+  opacity: 50%;
+  /* filter: blur(1px); */
 }
 
 .topimg {
@@ -110,13 +111,6 @@ button {
   filter: drop-shadow(0 0 0.75rem black);
 }
 
-.top2 {
-  height: 10px;
-  border-top: #f68026;;
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-bottom: #f68026;;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  background-color: #dd550c;
+.Game {
+  padding: 50px;
 }

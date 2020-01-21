@@ -1,1 +1,27 @@
-.Headline {}
+.Headline {
+    text-align: center;
+}
+
+header {
+    align-items: center;
+    widows: 100%;
+    height: 60px;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: #496e9c; */
+    background-color: #496e9c ;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .top2 {
+    height: 10px;
+    border-top: #f68026;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-bottom: #f68026;;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    background-color: #dd550c;
+}  

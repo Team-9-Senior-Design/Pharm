@@ -19,7 +19,7 @@ class App extends React.Component {
 
   }
   startGame= () => {
-    this.setState({homePage: false}); 
+    // this.setState({homePage: false}); 
   }
 
   login= () => {
@@ -45,7 +45,8 @@ class App extends React.Component {
 		} 
 		else{
       console.log("loggin")
-			this.setState({loggedIn: true}); 
+      this.setState({homePage: false}); 
+			// this.setState({loggedIn: true}); 
 		}
 			
 	}
@@ -53,65 +54,73 @@ class App extends React.Component {
     const homePage = this.state.homePage;
     const loggedIn = this.state.loggin;
   return (
-    <div className="App">
-      
+    // <div className="App">
+    <body>
       {homePage ? (
+        
         
         <div>
         <Headline/>
         
-          <img className="background" src={require('./pre.jpg')} alt="background" />
-          
-            <Router className="start">
-            <Link to="/Play">
-            <AwesomeButton id= "startbutton"
-              cssModule={AwesomeButtonStyles}
-              type="primary"
-              ripple
-            >
-              Start Game 
-            </AwesomeButton>
-            </Link>
-            <Switch>
-              <Route path="/Play">
-                {this.startGame}
-              </Route>
-            </Switch>
-          </Router>
-          <div id="description">
-          <div id="loginTip"> 
-                <p id="p1"> Description </p>
-              </div>
-          This simulation will interactively walk students through patient scenarios to present common barriers patients face and the implications on their health and ability to care for themselves. The students will be required to make decisions throughout the simulation that affect their progress through the simulation. This will help equip students to identify and utilize resources to overcome these barriers and develop patient-specific treatment or self-management recommendations.
-          </div>
-            <form name="f" action="">
-            <div id="login">
-              <div id="loginTip"> 
-                <p id="p1"> Log In</p>
-              </div>
-
-              <div id="login1">
-                <img src="img/username.png" width="20" height="20" alt=""/>
-                <input type="text" id="userName" placeholder="username" />
-              </div>
-
-              <div id="login1">
-                <img src="img/password.png" width="20" height="20" alt=""/>
-                <input type="password" id="passWord" placeholder="password" />
-              </div>
-
-              <div id="logb">
-                <input className= "loginbutton"type="button" value="Log In" onClick={this.login}/>
-              </div>
+         
+          <div className="bg">
+            <div id="login2">
+            <div id="loginTip">
+            <h1><br/>IDENTITY LIFE</h1>
             </div>
-		        </form>
-          
-      </div>
+            <p> <br/>
+              This simulation will interactively walk 
+              students through patient scenarios to present 
+              common barriers patients face and the implications 
+              on their health and ability to care for themselves. 
+              The students will be required to make decisions 
+              throughout the simulation that affect their progress 
+              through the simulation. This will help equip students
+              to identify and utilize resources to overcome 
+              these barriers and develop patient-specific treatment 
+              or self-management recommendations.</p>
+
+            </div>
+              <form name="f" action="">
+              <div id="login">
+                <div id="loginTip"> 
+                  <img src={require("../src/logi.png")} height="50" />
+                </div>
+
+                <div id="login1">
+                  <img src="img/username.png" width="20" height="20" alt=""/>
+                  <input type="text" id="userName" placeholder="username" />
+                </div>
+
+                <div id="login1">
+                  <img src="img/password.png" width="20" height="20" alt=""/>
+                  <input type="password" id="passWord" placeholder="password" />
+                </div>
+                <Router className="start">
+                <Link to="/Play">
+                <div id="logb">
+                  <input className= "loginbutton"type="button" value="Log In" onClick={this.login}/>
+                </div>
+                </Link>
+                <Switch>
+                <Route path="/Play">
+                  {/* {this.startGame()} */}
+                  { console.log('this button works') }
+                </Route>
+                </Switch>
+                </Router>
+                <div id="logb">
+                  <input className= "Signupbutton"type="button" value="Sign Up" onClick={this.login}/>
+                </div>
+              </div>
+              </form>
+            </div>
+            </div>
       ) : (
         <Game />
       )}
-      
-    </div>
+      </body>
+    // </div>
   );
   }
 }

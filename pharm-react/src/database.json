@@ -1,0 +1,64 @@
+{
+	"Pharm-sim": {
+		"scen1": {
+            "name": "",
+			"type": "exploratory",
+			"backgroundinfo": "",
+			"path": {
+                "text": "What would you recommend regarding Danny’s antidiabetic medications?",
+                "paths": {
+                    "one": {
+                        "text": "Continue current medications",
+                        "path": {
+                            "text": "Danny calls clinic and lets you know he is unable to afford his pioglitazone at Publix, how do you respond?",
+                            "choices": [
+                                {"one": "D/C pioglitazone and recommend Jardiance 10 mg po daily",}
+                            ]
+                        }
+                    },
+                    "two": {
+                        "text": "Start glimepiride 2 mg po daily",
+                        "path": {
+
+                        }
+                    }, 
+                    "third":{
+                        "third": "D/C pioglitazone and start Jardiance 10 mg po daily",
+                        "path": {
+
+                        }
+                    }
+                }
+
+			}
+		}
+	},
+	"Users": {
+		"UserA": {
+			"Name": "William Otey",
+			"Username": "wotey",
+			"Password": "golly123",
+			"scenarios_taken": [
+                "scen1":{
+                    "name": "scen1",
+                    "score": 79, 
+                    "paths":[]
+                }
+            ]
+		},
+		"UserB": {
+			"Name": "William Otey",
+			"Username": "wotey",
+			"Password": "golly123",
+			"scenarios_taken": [{}]
+		}
+	},
+	"Admin": {
+		"Admin1": {
+			"Name": "William Otey",
+			"Username": "wotey",
+			"Password": "golly123"
+		}
+
+	}
+}

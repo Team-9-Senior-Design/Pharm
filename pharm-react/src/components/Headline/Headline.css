@@ -9,7 +9,7 @@ header {
     /* border-width: 2px;
     border-style: solid;
     border-color: #496e9c; */
-    background-color: #496e9c ;
+    background-color: white ;
     padding-bottom: 10px;
     text-align: center;
     font-size: 40px;
@@ -24,4 +24,5 @@ header {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     background-color: #dd550c;
+    padding-bottom: 5px;
 }  

@@ -15,19 +15,23 @@ import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {homePage: true};
+    this.state = {first: true,
+                  second: false};
 
   }
   Change = (element ,current : String, newer : String) => {
-    ReactDOM.render(element, document.getElementById(newer));
+    // ReactDOM.render(element, document.getElementById(newer));
 
   }
   render () {
+    const first = this.state.first;
+    const second = this.state.second;
   return (
-  <body >
+  <div>
 	  <Headline/>
+  <div className="bg"> 
   <div className ="description1">
-    <img className="background" src={require('../../pre.jpg')} alt="background" />
+    {/* <img className="background" src={require('../../pre.jpg')} alt="background" /> */}
     <div className="centered"> 
       <h3>Initial Case Info</h3>
       <p>
@@ -41,11 +45,26 @@ class Game extends React.Component {
       <p><span className= "Bold">Current Meds: </span> metformin 1000 mg po BID, pioglitazone 30 mg po daily, ramipril 10 mg po daily, carvedilol 25 mg po BID, spironolactone 25 mg po daily, furosemide 20 mg po daily PRN, aspirin 81 mg po daily, atorvastatin 80 mg po daily, escitalopram 20 mg po daily</p>
       <p><span className= "Bold">Vaccine history: </span> Walks 20 minutes 3 days a week at the closet mall</p>
       <p><span className= "Bold">Significant vitals and labs: </span> Walks 20 minutes 3 days a week at the closet mall</p>
-
+      <Router className="start">
+            <Link to="/Play">
+            <AwesomeButton id= "startbutton"
+              cssModule={AwesomeButtonStyles}
+              type="primary"
+              ripple
+            >
+              Next 
+            </AwesomeButton>
+            </Link>
+            <Switch>
+              <Route path="/Play">
+              {this.Change()}
+              { console.log('this button works') }
+              </Route>
+            </Switch>
+          </Router>
     </div>
   </div>
   <div className="first3choice">
-	<div className="backg">
 	<div className="box1">
 		<h1>Continue the current medications	</h1>   
 		<img src={require("../../Unknown.jpg")}/> 
@@ -93,6 +112,7 @@ class Game extends React.Component {
 	<div className="box1">
 		<h1>D/C pioglitazone and start Jardiance 10 mg po daily</h1>   
 		<img src={require("../../Unknown.jpg")}/> 
+    <br/>
     <Router className="start">
             <Link to="/Play">
             <AwesomeButton id= "startbutton"
@@ -110,17 +130,44 @@ class Game extends React.Component {
             </Switch>
           </Router>
 		<br />
-	</div>
-
-
-
-
-
-	</div>
+	</div> 
   </div> 
+    <div className="onea">
+          <div className="box1">
+          <h1>Danny calls clinic and lets you know he is unable to afford his pioglitazone at Publix, how do you respond? </h1>   
+          <img src={require("../../Unknown.jpg")}/> 
+          <br/>
+          <Router className="start">
+                  <Link to="/Play">
+                  <AwesomeButton id= "startbutton"
+                    cssModule={AwesomeButtonStyles}
+                    type="primary"
+                    ripple
+                  >
+                    Next 
+                  </AwesomeButton>
+                  </Link>
+                  <Switch>
+                    <Route path="/Play">
+                    { console.log('this button works') }
+                    </Route>
+                  </Switch>
+                </Router>
+          <br />
+        </div> 
+      
 
+    </div>
+    <div className="oneb">
+      
 
-  </body>
+    </div>
+    <div className="onec">
+      
+
+    </div>
+  </div>
+    </div>
 );
 }
 }

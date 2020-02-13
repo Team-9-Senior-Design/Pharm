@@ -144,7 +144,12 @@ a:hover{
 
 
 xt-align: center;	
-
+.back2 {
+    top: inherit;
+    height: 100%;
+    width: 100%;
+    background-color: #03244d;
+}
 .background {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -164,9 +169,25 @@ xt-align: center;
     transform: translate(-50%, -50%);
     text-emphasis: bold;
     font-weight: bolder;
-    background-color: grey;
+    background-color:#03244d;
     color: white;
     padding-left: 20px;
     padding-right: 20px;
     opacity: 0.7;
+}
+
+.firstthreechoice{
+    display: none;
+    padding-top: 4%;
+    position: absolute;
+    width: 100%;
+	height: auto;
+	display: -webkit-flex; /* Safari */
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+    z-index: -2;
+    padding-top: 20px;
+    top: 50px;
+
 }

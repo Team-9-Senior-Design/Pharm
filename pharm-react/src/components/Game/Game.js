@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import './Game.css';
 import Headline from '../Headline/Headline';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,13 +24,13 @@ class Game extends React.Component {
 
   }
   render () {
-    const first = this.state.first;
-    const second = this.state.second;
+    // const first = this.state.first;
+    // const second = this.state.second;
   return (
   <div>
 	  <Headline/>
   <div className="bg"> 
-  <div className ="description1">
+    <div className="description">
     {/* <img className="background" src={require('../../pre.jpg')} alt="background" /> */}
     <div className="centered"> 
       <h3>Initial Case Info</h3>
@@ -62,12 +62,12 @@ class Game extends React.Component {
               </Route>
             </Switch>
           </Router>
-    </div>
+    
   </div>
-  <div className="first3choice">
+  {/* <div className="first3choice">
 	<div className="box1">
 		<h1>Continue the current medications	</h1>   
-		<img src={require("../../Unknown.jpg")}/> 
+		<img src={require("../../Unknown.jpg")} alt=""/> 
 		<br />
 		<Router className="start">
             <Link to="/Play">
@@ -89,7 +89,7 @@ class Game extends React.Component {
 
 	<div className="box1">
 		<h1>Start glimepiride 2 mg po daily</h1>   
-		<img src={require("../../Unknown.jpg")}/>
+		<img src={require("../../Unknown.jpg")} alt=""/>
 		<br />
 		<Router className="start">
             <Link to="/Play">
@@ -111,7 +111,7 @@ class Game extends React.Component {
 
 	<div className="box1">
 		<h1>D/C pioglitazone and start Jardiance 10 mg po daily</h1>   
-		<img src={require("../../Unknown.jpg")}/> 
+		<img src={require("../../Unknown.jpg")} alt=""/> 
     <br/>
     <Router className="start">
             <Link to="/Play">
@@ -135,7 +135,7 @@ class Game extends React.Component {
     <div className="onea">
           <div className="box1">
           <h1>Danny calls clinic and lets you know he is unable to afford his pioglitazone at Publix, how do you respond? </h1>   
-          <img src={require("../../Unknown.jpg")}/> 
+          <img src={require("../../Unknown.jpg")} alt=""/> 
           <br/>
           <Router className="start">
                   <Link to="/Play">
@@ -165,9 +165,10 @@ class Game extends React.Component {
     <div className="onec">
       
 
+    </div> */}
+    </div>
     </div>
   </div>
-    </div>
 );
 }
 }

@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
+// eslint-disable-next-line
 import { AwesomeButton } from "react-awesome-button";
+// eslint-disable-next-line
 import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
-import Game from "./components/Game/Game";
+// import Game from "./components/Game/Game";
 import Headline from './components/Headline/Headline';
+import firebase from './firebase.js';
+import './components/signUp/signUp.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,15 +17,25 @@ class App extends React.Component {
     this.loggin = {loggedIn: false};
 
   }
-  startGame= () => {
-    // this.setState({homePage: false}); 
+  // startGame= () => {
+  //   // this.setState({homePage: false}); 
+  // }
+  retrieveLogin= () => {
+    let userId = "User1";
+		return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+      // eslint-disable-next-line
+      var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+      // ...
+    });
   }
-
+  signup=() => {
+    this.props.history.push("/Signup");
+  }
   login= () => {
-    
+    // eslint-disable-next-line
 		var userName = document.getElementById("userName").value;
-		var userPass = document.getElementById("passWord").value;
-		
+    var userPass = document.getElementById("passWord").value;
+    
 		// if (userPass === "root" && userName === "root") {
 		// 	window.document.f.action="secondPage.html";
 		// 	window.document.f.submit();
@@ -44,25 +53,20 @@ class App extends React.Component {
 			this.setState({loggedIn: false}); 
 		} 
 		else{
-      console.log("loggin")
-      this.setState({homePage: false}); 
+      this.props.history.push("/Play");
+      console.log('play')
 			// this.setState({loggedIn: true}); 
 		}
 			
 	}
-  render () {
-    const homePage = this.state.homePage;
-    const loggedIn = this.state.loggin;
+  render (){
+    // const homePage = this.state.homePage;
+    // eslint-disable-next-line
+    // const loggedIn = this.state.loggin;
   return (
     // <div className="App">
-    <body>
-      {homePage ? (
-        
-        
-        <div>
+      <div>
         <Headline/>
-        
-         
           <div className="bg">
             <div id="login2">
             <div id="loginTip">
@@ -79,49 +83,32 @@ class App extends React.Component {
               to identify and utilize resources to overcome 
               these barriers and develop patient-specific treatment 
               or self-management recommendations.</p>
-
             </div>
-              <form name="f" action="">
-              <div id="login">
-                <div id="loginTip"> 
-                  <img src={require("../src/logi.png")} height="50" />
-                </div>
-
-                <div id="login1">
-                  <img src="img/username.png" width="20" height="20" alt=""/>
-                  <input type="text" id="userName" placeholder="username" />
-                </div>
-
-                <div id="login1">
-                  <img src="img/password.png" width="20" height="20" alt=""/>
-                  <input type="password" id="passWord" placeholder="password" />
-                </div>
-                <Router className="start">
-                <Link to="/Play">
-                <div id="logb">
-                  <input className= "loginbutton"type="button" value="Log In" onClick={this.login}/>
-                </div>
-                </Link>
-                <Switch>
-                <Route path="/Play">
-                  {/* {this.startGame()} */}
-                  { console.log('this button works') }
-                </Route>
-                </Switch>
-                </Router>
-                <div id="logb">
-                  <input className= "Signupbutton"type="button" value="Sign Up" onClick={this.login}/>
-                </div>
+            <form name="f" action="">
+            <div id="login">
+              <div id="loginTip"> 
+                <img src={require("../src/logi.png")} height="50" alt=""/>
               </div>
-              </form>
+
+              <div id="login1">
+                <img src={require("../src/sproject/img/username.png")} width="20" height="20" alt=""/>
+                <input type="text" id="userName" defaultValue="username" />
+              </div>
+
+              <div id="login1">
+                <img src={require("../src/sproject/img/password.png")} width="20" height="20" alt=""/>
+                <input type="password" id="passWord" defaultValue="password" />
+              </div>
+              <div id="logb">
+                <input className= "loginbutton"type="button" value="Log In" onClick={this.login}/>
+              </div>
+              <div id="logb">
+                <input className= "Signupbutton"type="button" value="Sign Up" onClick={this.signup}/>
+              </div>
             </div>
+            </form>
             </div>
-      ) : (
-        <Game />
-      )}
-      </body>
-    // </div>
-  );
+            </div>);
   }
 }
 

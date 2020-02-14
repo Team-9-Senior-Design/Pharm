@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-const firebaseConfig = {
+const config = {
     apiKey: "AIzaSyDm61PtrJP9VKzm5Tuevqw8NaTLBQ5Vmo8",
     authDomain: "pharm-sim.firebaseapp.com",
     databaseURL: "https://pharm-sim.firebaseio.com",
